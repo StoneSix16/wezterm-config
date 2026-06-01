@@ -1,12 +1,15 @@
 local wezterm = require("wezterm")
 local fonts = require('config.font')
 
-local light_theme = 'Default Light'
-local dark_theme = 'One Dark (base16)'
+local light_theme = "Google Light (base16)"
+local dark_theme = "OneDark (base16)"
 local appearance = wezterm.gui.get_appearance()
-local current_theme = dark_theme
 
-if appearance:find 'Dark' then
+local current_theme = dark_theme
+local act_tab_bg = "#000000"
+local inact_tab_bg = "#333333"
+
+if appearance:find("Dark") then
   current_theme = dark_theme
 else
   current_theme = light_theme
@@ -76,8 +79,8 @@ return {
   },
   window_close_confirmation = "AlwaysPrompt",
   window_frame = {
-    -- active_titlebar_bg = "#0F2536",
-    -- inactive_titlebar_bg = "#0F2536",
+    -- active_titlebar_bg = act_tab_bg,
+    -- inactive_titlebar_bg = inact_tab_bg,
     font = fonts.font,
     font_size = fonts.font_size,
   },
