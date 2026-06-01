@@ -1,12 +1,22 @@
 local wezterm = require("wezterm")
 local fonts = require('config.font')
 
+local light_theme = 'Default Light'
+local dark_theme = 'One Dark (base16)'
+local appearance = wezterm.gui.get_appearance()
+local current_theme = dark_theme
+
+if appearance:find 'Dark' then
+  current_theme = dark_theme
+else
+  current_theme = light_theme
+end
+
 return {
   term = "xterm-256color",
   front_end = "WebGpu",
   webgpu_power_preference = "HighPerformance",
-  color_scheme = 'Default Dark (base16)',
-
+  color_scheme = current_theme,
 
   -- background
   window_background_opacity = 1.0,

@@ -31,7 +31,7 @@ local keys = {
   { key = "F11", mods = "NONE", action = act.ToggleFullScreen },
   { key = "F12", mods = "NONE", action = act.ShowDebugOverlay },
   { key = "f", mods = mod.COMMAND, action = act.Search({ CaseInSensitiveString = "" }) },
-
+  { key = "P", mods = mod.COMMAND_REV, action = act.ActivateCommandPalette },
   -- copy/paste --
   { key = "c", mods = mod.COMMAND, action = act.CopyTo("Clipboard") },
   { key = "v", mods = mod.COMMAND, action = act.PasteFrom("Clipboard") },

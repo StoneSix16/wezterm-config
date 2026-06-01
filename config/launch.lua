@@ -33,10 +33,14 @@ if platform.is_win then
   --     remote_address = host,
   --   })
 elseif platform.is_mac then
-  options.default_prog = { "/opt/homebrew/bin/fish", "--login" }
+  options.default_prog = { "zsh", "--login" }
   options.launch_menu = {
+    { 
+      label = "Zsh", 
+      domain = { DomainName = "local" },
+      args = { "zsh", "--login" }
+    },
     { label = "Bash", args = { "bash", "--login" } },
-    { label = "Zsh", args = { "zsh", "--login" } },
   }
 elseif platform.is_linux then
   options.default_prog = { "bash", "--login" }
